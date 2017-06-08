@@ -1,0 +1,70 @@
+<landing-template>
+	<div class="full-screen ui-primary">
+		<div class="f-row jc-center">
+			<div class="pad-1">
+				<!-- <ui-btn label="{ localStorage[labelTest1] || LangModule.model().labels[labelTest1] }" onclick="{ getStarted }" css="signup-button ui-orange-dk" /> -->
+				<ui-btn label="{ 'Get Started' }" onclick="{ getStarted }" css="signup-button ui-orange-dk" /> </div>
+		</div>
+		<div class="pad-3 f-row jc-center" style="">
+			<div class="f-row ai-center marketing-box">
+				<h1>MARKETING CONTENT REQUIRED</h1>
+			</div>
+		</div>
+	</div>
+	<style>
+		h1 {
+			font-size: 2.15em;
+			margin-top: 2px;
+		}
+		.marketing-box {
+			border: 5px solid #F09419;
+			background-color: white;
+			color: #F09419;
+			vertical-align: middle;
+			width: 33%;
+			height: 15em;
+			text-align: center;
+		}
+
+		.full-screen {
+			width: 100vw;
+			height: 100vh;
+			overflow: auto;
+		}
+	</style>
+	<script>
+		var self = this;
+
+		self.getStarted = function() {
+			route('/signup');
+		}
+		this.on('mount', function() {
+			RC.trigger('UI_SET_STATE', {
+				route: '/landing',
+				title: 'Landing',
+				spinner: false,
+				hideMenuIcon: true,
+				showLoginIcon:true
+			});
+			self.update()
+		});
+		RC.on('UI_STATE_CHANGED', function(change) {
+			if (change) {
+				if (change.route == '/landing') {
+					if (evoAuth.currentUser && change.companyModule) {
+						if (change.companyModule.ID) {
+							RC.trigger('AM_INIT',change.userModule.ID);
+						}
+					}
+				}
+			}
+		});
+		// this.on('mount', function() {
+		// labelTest1 = 'Get Started';
+		// LangModule.Translate(labelTest1);
+		// });
+		self.getLogin = function() {
+			route('/login');
+		}
+	</script>
+</landing-template>

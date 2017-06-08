@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<title>Evosus Pro</title>
+		<!-- FAVICONS !-->
+		<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/img/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="/img/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+		<!-- Styles !-->
+		<link href="/css/ui-reset.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="/css/ui-flexbox.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="/css/ui-layout.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="/css/ui-theme.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="/css/ui-spinner.css" media="all" rel="stylesheet" type="text/css" />
+		<!-- Material Design Icons !-->
+		<link href="/lib/mdi/css/materialdesignicons.css" media="all" rel="stylesheet" type="text/css" />
+		<!-- Roboto Font !-->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700" rel="stylesheet">
+		<!-- Google Maps !-->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1q_-8UqcEF3s8TSKOP-jGCxVUbYSh688&libraries=drawing"></script>
+	</head>
+	<body class="ui-background">
+		<!-- App Mount !-->
+		<div id="appMount" class="app-mount"></div>
+		<!-- ag-Grid-->
+		<script src="/lib/ag-grid/dist/ag-grid.min.js"></script>
+		<!-- Firebase -->
+		<script src="/lib/firebase/firebase.js"></script>
+		<!-- QBO -->
+		<script type="text/javascript" src="https://appcenter.intuit.com/Content/IA/intuit.ipp.anywhere.js"></script>
+		<!-- Riot !-->
+		<script src="/lib/riot/riot+compiler.min.js"></script>
+		<script src="/lib/riotcontrol/riotcontrol.js"></script>
+		<script src="/lib/riot-route/dist/route.min.js"></script>
+		<!-- UI !-->
+		<script src="ui/ui-module.js"></script>
+		<script type="riot/tag" src="/ui/ui-elements.html"></script>
+		<!-- Static Data !-->
+		<script src="js/static_data.js"></script>
+		<!-- App !-->
+		<script type="riot/tag" src="/app/app-global-nav.html"></script>
+		<script type="riot/tag" src="/app/app-module-nav.html"></script>
+		<script type="riot/tag" src="/app/app-subscreen-nav.html"></script>
+		<!-- App Modules && Templates -->
+		<!-- AUTH -->
+		<script type="riot/tag" src="/app/auth/login-template.html"></script>
+		<script type="riot/tag" src="/app/auth/signup-template.html"></script>
+		<script type="riot/tag" src="/app/auth/choose-app-template.html"></script>
+		<script type="riot/tag" src="/app/auth/auth-transition-template.html"></script>
+		<script src="/app/auth/auth-module.js"></script>
+		<!-- USERS -->
+		<script type="riot/tag" src="/app/user/user-list-template.html"></script>
+		<script type="riot/tag" src="/app/user/complete-setup-template.html"></script>
+		<script src="/app/user/user-module.js"></script>
+		<!-- LANDING -->
+		<script type="riot/tag" src="/app/landing/landing-template.html"></script>
+		<!-- COMPANY -->
+		<script type="riot/tag" src="/app/company/company-setup-template.html"></script>
+		<script type="riot/tag" src="/app/company/company-edit-template.html"></script>
+		<script src="/app/company/company-module.js"></script>
+		<!-- DASHBOARD -->
+		<script type="riot/tag" src="/app/dashboard/dashboard-template.html"></script>
+		<script type="riot/tag" src="/app/dashboard/dashboard-company-template.html"></script>
+		<script type="riot/tag" src="/app/dashboard/dashboard-myaccount-template.html"></script>
+		<!-- APP MODULE -->
+		<script src="/app/app-module.js"></script>
+		<!-- INTEGRATIONS -->
+		<script type="riot/tag" src="/app/integrations/integrations-template.html"></script>
+		<script src="/app/integrations/integrations-module.js"></script>
+		<script type="riot/tag" src="/app/integrations/qbo/qbo-template.html"></script>
+		<script src="/app/integrations/qbo/qbo-module.js"></script>
+		<script type="riot/tag" src="/app/integrations/slack/slack-template.html"></script>
+		<script src="/app/integrations/slack/slack-module.js"></script>
+		<!-- SECURITY -->
+		<script type="/riot/tag" src="/app/security/security-template.html"></script>
+		<script type="/riot/tag" src="/app/security/security-detail-template.html"></script>
+		<script src="/app/security/security-module.js"></script>
+		<!-- LIST -->
+		<script type="riot/tag" src="/app/list/global-list-template.html"></script>
+		<script type="riot/tag" src="/app/list/list-detail-template.html"></script>
+		<script type="riot/tag" src="/app/list/list-type-template.html"></script>
+		<script src="/app/list/list-module.js"></script>
+		<!-- BILLING -->
+		<script type="riot/tag" src="/app/payment/confirm-template.html"></script>
+		<script type="riot/tag" src="/app/payment/payment-template.html"></script>
+		<script src="/app/payment/billing-module.js"></script>
+		<!-- POS -->
+		<script type="riot/tag" src="/app/pos/pos-login-template.html"></script>
+		<script type="riot/tag" src="/app/pos/pos-stations-template.html"></script>
+		<script type="riot/tag" src="/app/pos/pos-template.html"></script>
+		<script type="riot/tag" src="/app/pos/pos-stations-detail-template.html"></script>
+		<script src="/app/pos/pos-module.js"></script>
+		<!-- LOGS -->
+		<!-- <script type="riot/tag" src="/app/log/change-log-template.html"></script> -->
+		<!-- <script type="riot/tag" src="/app/log/log-template.html"></script> -->
+		<script src="/app/log/log-module.js"></script>
+		<!-- SCRIPTS !-->
+		<script src="js/routes.js"></script>
+		<script src="js/mix-global-functions.js"></script>
+		<script src="js/auth-startup.js"></script>
+		<!-- FINAL SCRIPT TO RUN -->
+		<script src="index.js"></script>
+	</body>
+</html>

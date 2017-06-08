@@ -1,0 +1,90 @@
+{
+  "name": "evo-pro-landing",
+  "description": "Evosus Pro Landing Page",
+  "version": "1.0.0",
+  "license": "ISC",
+  "author": "Evosus, Inc",
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evosus/evo-pro-landing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/evosus/evo-pro-landing/issues"
+  },
+  "homepage": "https://github.com/evosus/evo-pro-landing#readme",
+  "main": "./bin/www",
+  "scripts": {
+    "start": "node ./bin/www",
+    "monitor": "nodemon ./bin/www",
+    "copy-img": "cp -r ./src/img/** ./dist/img/",
+    "copy-assets": "cp -r ./src/lib/** ./dist/lib/",
+    "build-css": "cat ./src/css/* > ./dist/css/main.css",
+    "prefix-css": "postcss --use autoprefixer ./dist/css/*.css -o build.css",
+    "minify-css": "cleancss -o ./dist/css/build.min.css ./dist/css/main.css",
+    "build-js": "riot ./src/ ./dist/js/main.js --ext html && concat-cli -f ./src/*/*.js ./src/app/*/*.js ./src/app/*/*/*.js ./src/app/*.js  -o ./dist/js/modules.js",
+    "minify-js": "uglifyjs ./dist/js/main.js ./dist/js/modules.js -o ./dist/js/all.min.js --source-map --output ./dist/js/all.min.js && rm ./dist/js/main.js ./dist/js/modules.js",
+    "build-dist": "npm run copy-img && npm run build-css && npm run minify-css && npm run build-js && npm run minify-js",
+    "rebuild": "npm run clean-dist && npm run build-dist && npm run monitor",
+    "dist": "npm run build-dist",
+    "compile": "npm run build-dist",
+    "clean-dist": "rm ./dist/*/*",
+    "env-dist": "mv server.js ./src/server.js.tmp && mv ./dist/server.js ./server.js && mv ./src/index.html ./src/index.html.tmp && mv ./src/index.js ./src/index.js.tmp",
+    "env-dev": "mv server.js ./dist/server.js && mv ./src/server.js.tmp ./server.js && mv ./src/index.html.tmp ./src/index.html && mv ./src/index.js.tmp ./src/index.js && npm run clean-dist",
+    "commit-update": "git add . && git commit . -m 'deployed updates to GAE' && git push"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.7.7",
+    "body-parser": "^1.17.1",
+    "clean-css": "^4.0.12",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "express-subdomain": "^1.0.5",
+    "firebase": "^3.8.0",
+    "firebase-admin": "^4.2.1",
+    "mdi": "^1.9.33",
+    "morgan": "^1.8.1",
+    "node-quickbooks": "^2.0.13",
+    "npm": "^4.5.0",
+    "path": "^0.12.7",
+    "postcss": "^5.2.17",
+    "querystring": "^0.2.0",
+    "request": "^2.81.0",
+    "request-debug": "^0.2.0",
+    "request-promise": "^4.2.0",
+    "riot": "^3.3.2",
+    "riot-route": "^3.1.0",
+    "riotcontrol": "0.0.3",
+    "util": "^0.10.3"
+  },
+  "devDependencies": {
+    "evo-lib": "evosus/evo-lib#master",
+    "evo-pro-logging": "evosus/evo-pro-logging#master",
+    "evo-pro-auth": "evosus/evo-pro-auth#master",
+    "evo-pro-users": "evosus/evo-pro-users#master",
+    "evo-pro-company": "evosus/evo-pro-company#master",
+    "clean-css-cli": "^4.0.12",
+    "concat-cli": "^4.0.0",
+    "firebase": "^3.8.0",
+    "firebase-tools": "^3.9.1",
+    "mdi": "^1.9.33",
+    "npm": "^4.5.0",
+    "riot": "^2.4.1",
+    "uglifyjs": "^2.4.10"
+  },
+  "keywords": [
+    "evosus",
+    "products",
+    "auth",
+    "login",
+    "register",
+    "accounts",
+    "hub",
+    "cloud",
+    "nodejs",
+    "firebase"
+  ]
+}
