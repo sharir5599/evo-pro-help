@@ -36,8 +36,6 @@
 	<body class="ui-background">
 		<!-- App Mount !-->
 		<div id="appMount" class="app-mount"></div>
-		<!-- ag-Grid-->
-		<script src="/lib/ag-grid/dist/ag-grid.min.js"></script>
 		<!-- Firebase -->
 		<script src="/lib/firebase/firebase.js"></script>
 		<!-- QBO -->
@@ -57,57 +55,66 @@
 		<script type="riot/tag" src="/app/app-subscreen-nav.html"></script>
 		<!-- App Modules && Templates -->
 		<!-- AUTH -->
-		<script type="riot/tag" src="/app/auth/login-template.html"></script>
-		<script type="riot/tag" src="/app/auth/signup-template.html"></script>
-		<script type="riot/tag" src="/app/auth/choose-app-template.html"></script>
-		<script type="riot/tag" src="/app/auth/auth-transition-template.html"></script>
-		<script src="/app/auth/auth-module.js"></script>
+		<script type="riot/tag" src="lib/evo-pro-auth/src/app/auth/login-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-auth/src/app/auth/signup-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-auth/src/app/auth/choose-app-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-auth/src/app/auth/auth-transition-template.html"></script>
+		<script src="lib/evo-pro-auth/src/app/auth/auth-module.js"></script>
 		<!-- USERS -->
-		<script type="riot/tag" src="/app/user/user-list-template.html"></script>
-		<script type="riot/tag" src="/app/user/complete-setup-template.html"></script>
-		<script src="/app/user/user-module.js"></script>
+		<script type="riot/tag" src="lib/evo-pro-users/src/app/user/user-list-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-users/src/app/user/complete-setup-template.html"></script>
+		<script src="lib/evo-pro-users/src/app/user/user-module.js"></script>
 		<!-- LANDING -->
 		<script type="riot/tag" src="/app/landing/landing-template.html"></script>
 		<!-- COMPANY -->
-		<script type="riot/tag" src="/app/company/company-setup-template.html"></script>
-		<script type="riot/tag" src="/app/company/company-edit-template.html"></script>
-		<script src="/app/company/company-module.js"></script>
+		<script type="riot/tag" src="lib/evo-pro-company/src/app/company/company-setup-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-company/src/app/company/company-edit-template.html"></script>
+		<script src="lib/evo-pro-company/src/app/company/company-module.js"></script>
 		<!-- DASHBOARD -->
-		<script type="riot/tag" src="/app/dashboard/dashboard-template.html"></script>
-		<script type="riot/tag" src="/app/dashboard/dashboard-company-template.html"></script>
-		<script type="riot/tag" src="/app/dashboard/dashboard-myaccount-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-dashboard/src/app/dashboard/dashboard-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-dashboard/src/app/dashboard/dashboard-company-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-dashboard/src/app/dashboard/dashboard-myaccount-template.html"></script>
 		<!-- APP MODULE -->
 		<script src="/app/app-module.js"></script>
 		<!-- INTEGRATIONS -->
-		<script type="riot/tag" src="/app/integrations/integrations-template.html"></script>
-		<script src="/app/integrations/integrations-module.js"></script>
-		<script type="riot/tag" src="/app/integrations/qbo/qbo-template.html"></script>
-		<script src="/app/integrations/qbo/qbo-module.js"></script>
-		<script type="riot/tag" src="/app/integrations/slack/slack-template.html"></script>
-		<script src="/app/integrations/slack/slack-module.js"></script>
+		<script type="riot/tag" src="lib/evo-pro-integrations/src/app/integrations/integrations-template.html"></script>
+		<script src="lib/evo-pro-integrations/src/app/integrations/integrations-module.js"></script>
+		<script type="riot/tag" src="lib/evo-pro-integrations/src/app/integrations/qbo/qbo-template.html"></script>
+		<script src="lib/evo-pro-integrations/src/app/integrations/qbo/qbo-module.js"></script>
+		<script type="riot/tag" src="lib/evo-pro-integrations/src/app/integrations/slack/slack-template.html"></script>
+		<script src="lib/evo-pro-integrations/src/app/integrations/slack/slack-module.js"></script>
 		<!-- SECURITY -->
-		<script type="/riot/tag" src="/app/security/security-template.html"></script>
-		<script type="/riot/tag" src="/app/security/security-detail-template.html"></script>
-		<script src="/app/security/security-module.js"></script>
+		<script type="/riot/tag" src="lib/evo-pro-security/src/app/security/security-template.html"></script>
+		<script type="/riot/tag" src="lib/evo-pro-security/src/app/security/security-detail-template.html"></script>
+		<script src="lib/evo-pro-security/src/app/security/security-module.js"></script>
 		<!-- LIST -->
-		<script type="riot/tag" src="/app/list/global-list-template.html"></script>
-		<script type="riot/tag" src="/app/list/list-detail-template.html"></script>
-		<script type="riot/tag" src="/app/list/list-type-template.html"></script>
-		<script src="/app/list/list-module.js"></script>
+		<script type="riot/tag" src="lib/evo-pro-customized-list/src/app/list/global-list-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-customized-list/src/app/list/list-detail-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-customized-list/src/app/list/list-type-template.html"></script>
+		<script src="lib/evo-pro-customized-list/src/app/list/list-module.js"></script>
 		<!-- BILLING -->
-		<script type="riot/tag" src="/app/payment/confirm-template.html"></script>
-		<script type="riot/tag" src="/app/payment/payment-template.html"></script>
-		<script src="/app/payment/billing-module.js"></script>
+		<script type="riot/tag" src="lib/evo-pro-billing/src/app/billing/confirm-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-billing/src/app/billing/payment-template.html"></script>
+		<script src="lib/evo-pro-billing/src/app/billing/billing-module.js"></script>
 		<!-- POS -->
-		<script type="riot/tag" src="/app/pos/pos-login-template.html"></script>
-		<script type="riot/tag" src="/app/pos/pos-stations-template.html"></script>
-		<script type="riot/tag" src="/app/pos/pos-template.html"></script>
-		<script type="riot/tag" src="/app/pos/pos-stations-detail-template.html"></script>
-		<script src="/app/pos/pos-module.js"></script>
+		<script type="riot/tag" src="lib/evo-pro-pos/src/app/pos/pos-login-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-pos/src/app/pos/pos-stations-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-pos/src/app/pos/pos-template.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-pos/src/app/pos/pos-stations-detail-template.html"></script>
+		<script src="lib/evo-pro-pos/src/app/pos/pos-module.js"></script>
+		<!-- INVENTORY -->
+		<script type="riot/tag" src="lib/evo-pro-inventory/src/app/inventory/inventory-template.html"></script>
+		<script src="lib/evo-pro-inventory/src/app/inventory/inventory-module.js"></script>
+		<!-- CUSTOMERS -->
+		<script type="riot/tag" src="lib/evo-pro-customers/src/app/customers/customers-template.html"></script>
+		<script src="lib/evo-pro-customers/src/app/customers/customers-module.js"></script>
+		<!-- INVOICES -->
+		<script type="riot/tag" src="lib/evo-pro-invoices/src/app/invoices/invoices-template.html"></script>
+		<script src="lib/evo-pro-invoices/src/app/invoices/invoices-module.js"></script>
 		<!-- LOGS -->
 		<!-- <script type="riot/tag" src="/app/log/change-log-template.html"></script> -->
 		<!-- <script type="riot/tag" src="/app/log/log-template.html"></script> -->
-		<script src="/app/log/log-module.js"></script>
+		<script src="lib/evo-pro-logging/src/app/log/log-module.js"></script>
 		<!-- SCRIPTS !-->
 		<script src="js/routes.js"></script>
 		<script src="js/mix-global-functions.js"></script>

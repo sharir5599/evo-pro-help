@@ -15,6 +15,6 @@ app.use(express.static(__dirname + '/src'));
 app.use(express.static(__dirname + '/src/app'));
 app.use('/lib', express.static(__dirname + '/node_modules'));
 // SAY MY NAME
-console.log('DEV Evosus Pro Landing APP!');
+console.log('DEV Evosus Pro Landing App!');
 // EXPORT APP
 module.exports = app;
