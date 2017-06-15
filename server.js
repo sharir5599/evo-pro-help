@@ -4,11 +4,12 @@
 // REQUIRE DEPENDENCIES
 var express = require('express');
 var subdomain = require('express-subdomain');
+var logger = require('morgan');
 // CREATE EXPRESS APP
 var app = express();
 app.use(logger('dev'));
 // SUBDOMAIN
-app.use(subdomain('*', router));
+// app.use(subdomain('*', router));
 // APP DIRECTORY SETTINGS
 app.set('trust proxy', true);
 app.use(express.static(__dirname + '/src'));
