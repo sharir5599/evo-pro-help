@@ -58,6 +58,11 @@ initRCStores = function() {
 	var BM = new billingModule();
 	var LOGM = new logModule();
 	var POSM = new POS_MODULE();
+	var INV = new inventoryModule();
+	var CUST = new customersModule();
+	var INVOICE = new invoicesModule();
+	var TAX = new taxesModule();
+	var COA = new accountsModule();
 	RC.addStore(UI); // UI State Manager
 	RC.addStore(IM); // Integrations Module
 	RC.addStore(UM); // User Data Module
@@ -69,6 +74,11 @@ initRCStores = function() {
 	RC.addStore(BM); // Billing Data Module
 	RC.addStore(LOGM); // Log Module
 	RC.addStore(POSM); // POS Module
+	RC.addStore(INV); // Inventory Module
+	RC.addStore(CUST); // Customer Module
+	RC.addStore(INVOICE); // Invoice Module
+	RC.addStore(TAX); // Taxes Data Module
+	RC.addStore(COA); // Chart Of Accounts Module
 }
 // ----------------------------------------
 // IO OBSERVABLE
