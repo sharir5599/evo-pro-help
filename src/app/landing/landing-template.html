@@ -1,43 +1,127 @@
 <landing-template>
-	<div class="full-screen ui-primary">
-		<div class="f-row jc-center">
-			<div class="pad-1">
-				<!-- <ui-btn label="{ localStorage[labelTest1] || LangModule.model().labels[labelTest1] }" onclick="{ getStarted }" css="signup-button ui-orange-dk" /> -->
-				<ui-btn label="{ 'Get Started' }" onclick="{ getStarted }" css="signup-button ui-orange-dk" /> </div>
+	<div class="full-screen backgroundfade bg-landing" style="overflow:hidden;display:flex;">
+		<div class="{ 'ep-logo' }">
+			<div class="ep-logo-item"></div>
 		</div>
-		<div class="pad-3 f-row jc-center" style="">
-			<div class="f-row ai-center marketing-box">
-				<h1>MARKETING CONTENT REQUIRED</h1>
-			</div>
+		<div class="landing">
+			<div class="pad-2 landing-item"><h3 class="landing-text">{ landingTxt || 'An innovative solution for pool, spa and hearth retailers' }</h3></div>
+			<div class="pad-2 landing-item "><ui-btn mdicon="mdi mdi-arrow-down" label="{ buttonTxt || 'Get Started' }" onclick="{ scrollDown }" css="signup-button ui-orange-dk"> </div>
+		</div>
+	</div>
+<div class="pad-2 rounded shadow f-one" style="width:100%;background:white;flex-direction:column;display:flex; justify-content: center;">
+	<div class="f-row ">
+		<div id="landing_form" class="item"></div>
+		<div style="display:flex;flex-direction: column;">
+			<h1 class="item" style="padding-left:2em;">{ martketingTxt2 || 'Need Marketing Title' }</h1>
+			<h5 class="item pad-2" style="padding-left:6em;">{ martketingTxt3 || 'Need Marketing Content...' }</h5>
+		</div>
+	</div>
+		<ui-btn-icon class="item" mdicon="mdi mdi-arrow-up" onclick="{ scrollUp }" />
+		<div class="copy-containter item">
+			<copyright />
 		</div>
 	</div>
 	<style>
+		input[type=text], input[type=email] {
+			width: 20em;
+		}
+		input[type=submit], .hs-button {
+			background-color: orange;
+			background: orange;
+			height: 2.5em;
+			margin: 0;
+			padding: 0em .5em;
+			border: none;
+			cursor: pointer;
+			font-weight: 700;
+			transition: .25s ease-in-out all;
+			width: 100%;
+		}
+		input[type=submit], .hs-button button {
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25) !important;
+		}
 		h1 {
 			font-size: 2.15em;
 			margin-top: 2px;
 		}
-		.marketing-box {
-			border: 5px solid #F09419;
-			background-color: white;
-			color: #F09419;
-			vertical-align: middle;
-			width: 33%;
-			height: 15em;
-			text-align: center;
+		.landing {
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
 		}
+		.copy-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			flex-direction: row;
 
-		.full-screen {
-			width: 100vw;
-			height: 100vh;
-			overflow: auto;
 		}
+		.space-between {
+			justify-content: space-between;
+			display: flex;
+		}
+		.item {
+			display: flex;
+			justify-content: center;
+			/*justify-content: space-between;*/
+			flex-direction: row;
+		}
+		.landing-text {
+			color: white;
+			font-size: 150%;
+		}
+		.landing-item {
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			flex-direction: row;
+		}
+		.bg-landing {
+			background-image: url('../../img/poolcorp-bg.jpg');
+		    background-repeat: no-repeat;
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-size: 100% 100%;
+		    opacity: 0.9;
+		    z-index: -1;
+		}
+		.full-screen-background {
+			position: fixed; 
+			top: 0; 
+			left: 0; 
+			width: 100vw;
+			z-index: -1;
+			overflow: auto;
+			
+		}
+		.backgroundfade {
+			opacity: 0.9
+		}
+		.titleText{
+			color: #CCC;
+			z-index: 5;
+			font-size: 24px;
+		}
+		.signup-button { width:16em; }
+		.ep-logo {
+			width: 8.5em;
+			height: 2em;
+		}
+		.ep-logo-item {
+			background-image: url('../../img/evosus_logo-transparent.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+			width: 100%;
+			height: 100%;
+		}
+		
 	</style>
 	<script>
 		var self = this;
-
-		self.getStarted = function() {
-			route('/signup');
-		}
 		this.on('mount', function() {
 			RC.trigger('UI_SET_STATE', {
 				route: '/landing',
@@ -59,12 +143,22 @@
 				}
 			}
 		});
-		// this.on('mount', function() {
-		// labelTest1 = 'Get Started';
-		// LangModule.Translate(labelTest1);
-		// });
-		self.getLogin = function() {
-			route('/login');
+		scrollDown = function() {
+		    window.scrollTo(0, 1000);
 		}
+		scrollUp = function() {
+		    window.scrollTo(0,-1000);
+		    console.log('scroll lost')
+		}
+	</script>
+	<script>
+		this.on('mount', function() {
+			hbspt.forms.create({ 
+				// css:'.hs-form { max-width: 400px; font-family: "Roboto", serif; } .hs-button.primary { display: flex;  font-size: 40px; line-height: 1.5; appearance: none; box-shadow: none; border: none; background-color: #F89522; color: #FFFFFF; border-radius: 15px; } .hs-button.primary:hover { background-color: #E2881F; } .hs-form label { font-size: 20px; color: #444; margin: 5px; } .hs-form input { outline:none; background-color:orange; box-sizing: border-box; margin: 5px; padding: 5px; width: 100%; } .hs-error-msgs label { display: none; list-style-type: none; }',
+				portalId: '1835951',
+			 	formId: '2993fb6b-88ad-4965-b81f-782e39c143a1',
+			 	target:'#landing_form'
+			});
+		});
 	</script>
 </landing-template>

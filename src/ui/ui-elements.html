@@ -218,8 +218,8 @@ NAV BAR ICON
 NAV BAR LOGO
 !-->
 <nav-bar-logo>
-	<div class="svg-resize">
-		<div class="{ opts.menu ? 'svg-test-menu' : 'svg-test' }"></div>
+	<div class="{ opts.class || 'svg-resize' }">
+		<div class="{ opts.class_logo || 'svg-test-menu' }"></div>
 	</div>
 	<style>
 		.svg-test {
@@ -407,8 +407,9 @@ UI BTN
 !-->
 <ui-btn onclick="{ click }" onmouseover="{ hover }" onblur="{ blur }" onfocus="{ focus }"> <button class="ui-btn rounded { opts.css }">
 		<div class="f-row ai-center jc-center">
-			<i if="{ opts.mdicon }" class="{ opts.mdicon } f-col ai-center jc-center"></i>
+			<!-- <i if="{ opts.mdicon }" class="{ opts.mdicon } f-col ai-center jc-center"></i> -->
 			<span>{ opts.label }</span>
+			<i if="{ opts.mdicon }" class="{ opts.mdicon } f-col ai-center jc-center"></i>
 		</div>
 	</button>
 	<style>
@@ -939,3 +940,47 @@ UI INPUT
 		}
 	</script>
 </ui-modal-open-pos>
+<!-- COPYRIGHT -->
+<copyright>
+    <div class="dev-links fg-black-lt">
+        <!-- <span id="register" class="link pointer">Register</span> -->
+        <!-- |  -->
+        <span id="privacy" class="link pointer">Privacy</span>
+        | <span id="terms" class="link pointer">Terms</span>
+        | <span class="default">© { opts.currentYear } Evosus, Inc.</span>
+    </div>
+    <script>
+        // ----------------------
+        // COMPUTED CURRENT YEAR
+        // ----------------------
+        opts.currentYear = new Date().getFullYear();
+        // ------------------------
+        // BIND DOM EVENTS ON MOUNT
+        // ------------------------
+        this.on('mount', function() {
+            // ----------------------
+            // INIT FB LINKS
+            // ----------------------
+            // links.getFBLinks();
+            // ----------------------
+            // Register
+            // ----------------------
+            // self.register.onclick = function() {
+                // window.open(links.login.register.url, links.target);
+            // }
+            // ----------------------
+            // Privacy Policy
+            // ----------------------
+            self.privacy.onclick = function() {
+                // window.open(links.login.privacy.url, links.target);
+            }
+            // ----------------------
+            // Agreement Terms
+            // ----------------------
+            self.terms.onclick = function() {
+                // window.open(links.login.terms.url, links.target);
+            }
+        });
+    </script>
+</copyright>
+
