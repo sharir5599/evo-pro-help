@@ -7,8 +7,9 @@
 // --------------------------------------
 function mountLanding() {
     riot.compile(function() {
-        riot.mount('#appMount', 'landing-template');
-        riot.mount('#globalNavMount', 'landing-template');
+        riot.mount('#appMount', 'app-subscreen-nav');
+        // riot.mount('#globalNavMount', 'app-subscreen-nav');
+        riot.mount('#subscreenNavMount', 'landing-template');
     });
 }
 route('/landing', function() {

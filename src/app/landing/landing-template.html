@@ -1,21 +1,21 @@
 <landing-template>
 	<div class="full-screen backgroundfade bg-landing" style="overflow:hidden;display:flex;">
-		<div class="{ 'ep-logo' }">
+		<!-- <div class="{ 'ep-logo' }">
 			<div class="ep-logo-item"></div>
-		</div>
+		</div> -->
 		<div class="landing">
-			<div class="pad-2 landing-item"><h3 class="landing-text">{ landingTxt || 'An innovative solution for pool, spa and hearth retailers' }</h3></div>
+			<div class="pad-2 landing-item"><h3 class=" rounded shadow pad-2 content-box landing-text">{ landingTxt || 'An innovative solution for pool, spa and hearth retailers' }</h3></div>
 			<div class="pad-2 landing-item "><ui-btn mdicon="mdi mdi-arrow-down" label="{ buttonTxt || 'Get Started' }" onclick="{ scrollDown }" css="signup-button ui-orange-dk"> </div>
 		</div>
 	</div>
-<div class="pad-2 rounded shadow f-one" style="width:100%;background:white;flex-direction:column;display:flex; justify-content: center;">
-	<div class="f-row ">
-		<div id="landing_form" class="item"></div>
-		<div style="display:flex;flex-direction: column;">
-			<h1 class="item" style="padding-left:2em;">{ martketingTxt2 || 'Need Marketing Title' }</h1>
-			<h5 class="item pad-2" style="padding-left:6em;">{ martketingTxt3 || 'Need Marketing Content...' }</h5>
+	<div class="pad-2 rounded shadow f-one" style="width:100%;background:white;flex-direction:column;display:flex; justify-content: center;">
+		<div class="f-row jc-center">
+			<div id="landing_form" class="item"></div>
+			<div style="display:flex;flex-direction: column;">
+				<h1 class="item" style="padding-left:2em;">{ martketingTxt2 || 'Need Marketing Title' }</h1>
+				<h5 class="item pad-2" style="padding-left:6em;">{ martketingTxt3 || 'Need Marketing Content...' }</h5>
+			</div>
 		</div>
-	</div>
 		<ui-btn-icon class="item" mdicon="mdi mdi-arrow-up" onclick="{ scrollUp }" />
 		<div class="copy-containter item">
 			<copyright />
@@ -36,6 +36,11 @@
 			font-weight: 700;
 			transition: .25s ease-in-out all;
 			width: 100%;
+		}
+		.content-box {
+			background: white;
+			opacity: 0.8;
+			color: #444;
 		}
 		input[type=submit], .hs-button button {
 			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25) !important;
@@ -70,7 +75,7 @@
 			flex-direction: row;
 		}
 		.landing-text {
-			color: white;
+			color: #444;
 			font-size: 150%;
 		}
 		.landing-item {
@@ -125,7 +130,7 @@
 		this.on('mount', function() {
 			RC.trigger('UI_SET_STATE', {
 				route: '/landing',
-				title: 'Landing',
+				title: 'Evosus Retail Pro',
 				spinner: false,
 				hideMenuIcon: true,
 				showLoginIcon:true

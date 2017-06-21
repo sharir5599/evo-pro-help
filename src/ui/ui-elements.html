@@ -104,15 +104,10 @@ NAV BAR
 <nav-bar>
 	<div class="nav-bar f-row ai-center jc-between { opts.css }">
 		<div class="left f-row ai-center">
-			<nav-bar-icon hide="{ hideMenuIcon }" mdicon="mdi mdi-menu" onclick="{ menuOpen }" />
+			<!-- <nav-bar-icon hide="{ hideMenuIcon }" mdicon="mdi mdi-menu" onclick="{ menuOpen }" /> -->
 			<nav-bar-logo /> </div>
 		<div class="right f-row ai-center">
-			<nav-bar-icon mdicon="{ signedIn ? 'mdi mdi-logout' : 'mdi mdi-login' }" onclick="{ getAuth }" />
-			<!--
-			<nav-bar-icon mdicon="mdi mdi-magnify" />
-			<nav-bar-icon mdicon="mdi mdi-history" />
-			<nav-bar-icon mdicon="mdi mdi-comment-text-outline" />
-!-->
+			<!-- <nav-bar-icon mdicon="{ signedIn ? 'mdi mdi-logout' : 'mdi mdi-login' }" onclick="{ getAuth }" /> -->
 		</div>
 	</div>
 	<style>
@@ -223,7 +218,7 @@ NAV BAR LOGO
 	</div>
 	<style>
 		.svg-test {
-			background-image: url('https://cdn.evosus.com/res/img/evosus_logo_retail-pro.png');
+			background-image: url('../img/evosus_logo-transparent.png');
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center center;
@@ -232,7 +227,7 @@ NAV BAR LOGO
 		}
 
 		.svg-test-menu {
-			background-image: url('https://cdn.evosus.com/res/img/evosus_logo_retail-pro.png');
+			background-image: url('../img/evosus_logo-transparent.png');
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center center;
@@ -358,7 +353,10 @@ SUBSCREEN BAR
 <subscreen-bar>
 	<div class="subscreen-bar f-row ai-center jc-between { opts.css }">
 		<div class="left f-row ai-center">
-			<nav-bar-icon mdicon="{ opts.mdicon }" onclick="{ backClick }" /> <span class="title"><h1>{ opts.title }</h1></span> </div>
+			<nav-bar-icon if="{ opts.mdicon }" mdicon="{ opts.mdicon }" onclick="{ backClick }" /> <span class="title">
+			<!-- <h1>{ opts.title }</h1> -->
+			<nav-bar-logo menu="{ true }" /> </div>
+			</span> </div>
 		<div class="right f-row ai-center"> </div>
 	</div>
 	<style>
