@@ -46,6 +46,7 @@
     "evo-pro-billing": "github:evosus/evo-pro-billing#master",
     "evo-pro-chartofaccounts": "github:evosus/evo-pro-chartofaccounts#master",
     "evo-pro-company": "github:evosus/evo-pro-company#master",
+    "evo-pro-core": "github:evosus/evo-pro-core#master",
     "evo-pro-customers": "github:evosus/evo-pro-customers#master",
     "evo-pro-customized-list": "github:evosus/evo-pro-customized-list#master",
     "evo-pro-dashboard": "github:evosus/evo-pro-dashboard#master",

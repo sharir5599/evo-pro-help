@@ -12,6 +12,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 		// SET CURRENT USER UID
 		RC.trigger('UM_SET_UID', user.uid);
 		localStorage.signedIn = true;
+		RC.trigger('PR_RUN');
 		RC.trigger('UI_SET_STATE', { signedIn:true });
 	} else {
 		if (!window.location.hash.includes('email=')) {
@@ -63,6 +64,8 @@ initRCStores = function() {
 	var INVOICE = new invoicesModule();
 	var TAX = new taxesModule();
 	var COA = new accountsModule();
+	var PR = new presenceModule();
+	var LINKS = new linksModule();
 	RC.addStore(UI); // UI State Manager
 	RC.addStore(IM); // Integrations Module
 	RC.addStore(UM); // User Data Module
@@ -79,6 +82,8 @@ initRCStores = function() {
 	RC.addStore(INVOICE); // Invoice Module
 	RC.addStore(TAX); // Taxes Data Module
 	RC.addStore(COA); // Chart Of Accounts Module
+	RC.addStore(PR); // User Presence Tracking Module
+	RC.addStore(LINKS); // External Links Module
 }
 // ----------------------------------------
 // IO OBSERVABLE

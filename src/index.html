@@ -7,25 +7,25 @@
 		<meta name="msapplication-tap-highlight" content="no">
 		<title>Evosus Pro</title>
 		<!-- FAVICONS !-->
-		<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="/img/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192" href="/img/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="57x57" href="lib/evo-pro-core/src/img/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="lib/evo-pro-core/src/img/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="lib/evo-pro-core/src/img/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="lib/evo-pro-core/src/img/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="lib/evo-pro-core/src/img/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="lib/evo-pro-core/src/img/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="lib/evo-pro-core/src/img/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="lib/evo-pro-core/src/img/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="lib/evo-pro-core/src/img/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="lib/evo-pro-core/src/img/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="lib/evo-pro-core/src/img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="lib/evo-pro-core/src/img/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="lib/evo-pro-core/src/img/favicon-16x16.png">
 		<!-- Styles !-->
-		<link href="/css/ui-reset.css" media="all" rel="stylesheet" type="text/css" />
-		<link href="/css/ui-flexbox.css" media="all" rel="stylesheet" type="text/css" />
-		<link href="/css/ui-layout.css" media="all" rel="stylesheet" type="text/css" />
-		<link href="/css/ui-theme.css" media="all" rel="stylesheet" type="text/css" />
-		<link href="/css/ui-spinner.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="lib/evo-pro-core/src/css/ui-reset.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="lib/evo-pro-core/src/css/ui-flexbox.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="lib/evo-pro-core/src/css/ui-layout.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="lib/evo-pro-core/src/css/ui-theme.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="lib/evo-pro-core/src/css/ui-spinner.css" media="all" rel="stylesheet" type="text/css" />
 		<!-- Material Design Icons !-->
 		<link href="/lib/mdi/css/materialdesignicons.css" media="all" rel="stylesheet" type="text/css" />
 		<!-- Roboto Font !-->
@@ -47,15 +47,20 @@
 		<script src="/lib/riotcontrol/riotcontrol.js"></script>
 		<script src="/lib/riot-route/dist/route.min.js"></script>
 		<!-- UI !-->
-		<script src="ui/ui-module.js"></script>
-		<script type="riot/tag" src="/ui/ui-elements.html"></script>
+		<script src="lib/evo-pro-core/src/ui/ui-module.js"></script>
+		<script type="riot/tag" src="lib/evo-pro-core/src/ui/ui-elements.html"></script>
 		<!-- Static Data !-->
-		<script src="js/static_data.js"></script>
+		<script src="lib/evo-pro-core/src/js/static_data.js"></script>
 		<!-- App !-->
-		<script type="riot/tag" src="/app/app-global-nav.html"></script>
-		<script type="riot/tag" src="/app/app-module-nav.html"></script>
-		<script type="riot/tag" src="/app/landing-app-subscreen-nav.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-core/src/app/app-global-nav.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-core/src/app/app-module-nav.html"></script>
+		<script type="riot/tag" src="lib/evo-pro-core/src/app/app-subscreen-nav.html"></script>
+		<script src="lib/evo-pro-core/src/app/app-module.js"></script>
 		<!-- App Modules && Templates -->
+		<!-- LANDING -->
+		<script type="riot/tag" src="app/landing/landing-template.html"></script>
+		<script type="riot/tag" src="app/landing/landing-subscreen-bar.html"></script>
+		<script type="riot/tag" src="app/landing-app-subscreen-nav.html"></script>
 		<!-- AUTH -->
 		<script type="riot/tag" src="lib/evo-pro-auth/src/app/auth/login-template.html"></script>
 		<script type="riot/tag" src="lib/evo-pro-auth/src/app/auth/signup-template.html"></script>
@@ -66,9 +71,6 @@
 		<script type="riot/tag" src="lib/evo-pro-users/src/app/user/user-list-template.html"></script>
 		<script type="riot/tag" src="lib/evo-pro-users/src/app/user/complete-setup-template.html"></script>
 		<script src="lib/evo-pro-users/src/app/user/user-module.js"></script>
-		<!-- LANDING -->
-		<script type="riot/tag" src="/app/landing/landing-template.html"></script>
-		<script type="riot/tag" src="/app/landing/landing-subscreen-bar.html"></script>
 		<!-- COMPANY -->
 		<script type="riot/tag" src="lib/evo-pro-company/src/app/company/company-setup-template.html"></script>
 		<script type="riot/tag" src="lib/evo-pro-company/src/app/company/company-edit-template.html"></script>
@@ -77,8 +79,6 @@
 		<script type="riot/tag" src="lib/evo-pro-dashboard/src/app/dashboard/dashboard-template.html"></script>
 		<script type="riot/tag" src="lib/evo-pro-dashboard/src/app/dashboard/dashboard-company-template.html"></script>
 		<script type="riot/tag" src="lib/evo-pro-dashboard/src/app/dashboard/dashboard-myaccount-template.html"></script>
-		<!-- APP MODULE -->
-		<script src="/app/app-module.js"></script>
 		<!-- INTEGRATIONS -->
 		<script type="riot/tag" src="lib/evo-pro-integrations/src/app/integrations/integrations-template.html"></script>
 		<script src="lib/evo-pro-integrations/src/app/integrations/integrations-module.js"></script>
@@ -118,14 +118,18 @@
 		<script src="lib/evo-pro-taxes/src/app/taxes/taxes-module.js"></script>
 		<!-- CHART OF ACCOUNTS -->
 		<script src="lib/evo-pro-chartofaccounts/src/app/accounts/accounts-module.js"></script>
+		<!-- EXTERNAL LINKS/DEEP LINKING -->
+		<script src="lib/evo-pro-links/src/app/links/links-module.js"></script>
 		<!-- LOGS -->
 		<!-- <script type="riot/tag" src="/app/log/change-log-template.html"></script> -->
 		<!-- <script type="riot/tag" src="/app/log/log-template.html"></script> -->
 		<script src="lib/evo-pro-logging/src/app/log/log-module.js"></script>
+		<!-- CORE APP MODULES-->
+		<script src="lib/evo-pro-core/src/app/core/presence-module.js"></script>
 		<!-- SCRIPTS !-->
 		<script src="js/routes.js"></script>
-		<script src="js/mix-global-functions.js"></script>
-		<script src="js/auth-startup.js"></script>
+		<script src="lib/evo-pro-core/src/js/mix-global-functions.js"></script>
+		<script src="lib/evo-pro-core/src/js/auth-startup.js"></script>
 		<!-- FINAL SCRIPT TO RUN -->
 		<script src="index.js"></script>
 	</body>
