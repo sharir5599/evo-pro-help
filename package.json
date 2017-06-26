@@ -41,6 +41,7 @@
     "clean-css": "^4.1.4",
     "cookie-parser": "^1.4.3",
     "dep": "0.0.2",
+    "evo-pro-assets": "github:evosus/evo-pro-assets#master",
     "evo-pro-auth": "github:evosus/evo-pro-auth#master",
     "evo-pro-billing": "github:evosus/evo-pro-billing#master",
     "evo-pro-chartofaccounts": "github:evosus/evo-pro-chartofaccounts#master",
