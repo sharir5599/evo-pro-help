@@ -19,6 +19,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "monitor": "nodemon ./bin/www",
+    "deploy": "gcloud app deploy --project evo-pro-staging && slackcli -t xoxp-2756762780-9320609456-153838678327-e2fcf4c75eab81778a6670df5dc7a226 -h dev-builds -u Evosus-Pro -e :trollface: -m 'Deployed Updates to STAGING http://sevosuspro.com/' && npm run commit-update",
+    "deploy-prod": "gcloud app deploy --project ep-production-161100 && slackcli -t xoxp-2756762780-9320609456-153838678327-e2fcf4c75eab81778a6670df5dc7a226 -h dev-builds -u Evosus-Pro -e :trollface: -m 'Deployed Updates to PRODUCTION URL: http://evosuspro.com/' && npm run commit-update",
     "copy-img": "cp -r ./src/img/** ./dist/img/",
     "copy-assets": "cp -r ./src/lib/** ./dist/lib/",
     "build-css": "cat ./src/css/* > ./dist/css/main.css",
