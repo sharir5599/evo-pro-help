@@ -10,8 +10,7 @@
 			<div id="landing_form" class="hs-form"></div>
 		</div>
 		<div class="cp-footer fg-white">
-			<div class="dev-links ta-center fg-black-lt">
-				<a href="http://www.evosus.com/media/doc/PrivacyPolicy.pdf" target="blank"><span id="privacy" class="link pointer">Privacy</span></a> |
+			<div class="dev-links ta-center fg-black-lt"><span id="privacy" class="link pointer" onclick="{ getPrivacy }">Privacy</span> |
 				<span class="default" style="font-style: italic">© { currentYear } Evosus Retail Pro All Rights Reserved</span>
 			</div>
 		</div>
@@ -106,7 +105,17 @@
 				showLoginIcon:true
 			});
 			self.update()
+			hbspt.forms.create({
+				css: '.hs-form { max-width: 400px; min-width:150px; font-family: Sans-Serif; } .hs-button.primary { display: inline-block; margin: 15px 0; width:100%; padding: 5px 15px 5px 15px; font-size: 1.25em;font-weight:600; line-height: 1.5; box-shadow: none; border: none; background-color: #F89522; color: #FFF;  } .hs-button.primary:hover { background-color: #F89522; } .hs-form label { font-size: 16px; color: #444; } .hs-form input[type="text"] { box-sizing: border-box; padding: 5px; width: 100%; margin: 5px 0; } .hs-form input[type="tel"] { box-sizing: border-box; margin: 0; padding: 5px; width: 100%; margin: 5px 0; }  .hs-form input[type="email"] { box-sizing: border-box; padding: 5px; width: 100%; margin: 5px 0;} .hs-error-msgs label { line-height: 20px; font-size: 16px; display: hidden; list-style-type: none; } ',
+				portalId: '1835951',
+			 	formId: '2993fb6b-88ad-4965-b81f-782e39c143a1',
+			 	target:'#landing_form'
+			});
 		});
+		getPrivacy = function() {
+			window.open('https://docs.google.com/viewer?url=www.evosus.com/media/doc/PrivacyPolicy.pdf','_blank');
+		}
+		currentYear = new Date().getFullYear();
 		RC.on('UI_STATE_CHANGED', function(change) {
 			if (change) {
 				if (change.route == '/landing') {
@@ -117,17 +126,6 @@
 					}
 				}
 			}
-		});
-	</script>
-	<script>
-		currentYear = new Date().getFullYear();
-		this.on('mount', function() {
-			hbspt.forms.create({
-				css: '.hs-form { max-width: 400px; min-width:150px; font-family: Sans-Serif; } .hs-button.primary { display: inline-block; margin: 15px 0; width:100%; padding: 5px 15px 5px 15px; font-size: 1.25em;font-weight:600; line-height: 1.5; box-shadow: none; border: none; background-color: #F89522; color: #FFF;  } .hs-button.primary:hover { background-color: #F89522; } .hs-form label { font-size: 16px; color: #444; } .hs-form input[type="text"] { box-sizing: border-box; padding: 5px; width: 100%; margin: 5px 0; } .hs-form input[type="tel"] { box-sizing: border-box; margin: 0; padding: 5px; width: 100%; margin: 5px 0; }  .hs-form input[type="email"] { box-sizing: border-box; padding: 5px; width: 100%; margin: 5px 0;} .hs-error-msgs label { line-height: 20px; font-size: 16px; display: hidden; list-style-type: none; } ',
-				portalId: '1835951',
-			 	formId: '2993fb6b-88ad-4965-b81f-782e39c143a1',
-			 	target:'#landing_form'
-			});
 		});
 	</script>
 </landing-template>
