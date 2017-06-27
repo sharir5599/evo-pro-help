@@ -1,138 +1,104 @@
 <landing-template>
-	<div class="full-screen backgroundfade bg-landing" style="overflow:hidden;display:flex;">
-		<div class="landing">
-			<div class="pad-2 landing-item">
-				<span class="rounded shadow pad-2 content-box landing-text">
-					<h1 class="jc-center" style="display:flex;padding-bottom:.5em;font-weight:400;">{ comingSoon || 'Coming Soon!' }</h1>
-					<h5 style="font-weight:400;">{ landingTxt || 'An innovative solution for pool, spa and hearth retailers' }</h5>
-				</span>
-			</div>
-			<div class="pad-2 landing-item "><ui-btn mdicon="mdi mdi-arrow-down" label="{ buttonTxt || 'Subscribe' }" onclick="{ scrollDown }" css="signup-button ui-orange-dk"> </div>
+	<div class="full-screen bg-landing fit center" style="overflow:hidden;background-color:#42bff4;">
+		<div class="right rounded shadow ui-white fade fix-spacing" style="overflow:hidden;">
+			<span class="ta-left">
+				<h1 style="font-weight:700;color:#444">{ comingSoon || 'Coming Soon!' }</h1>
+				<div class="pad-dot-5"></div>
+				<h3 style="max-width:400px;font-weight:700;color:#444">{ landingTxt || 'An innovative solution for pool, spa and hearth retailers.' }</h3>
+			</span>
+			<div class="pad-1"></div>
+			<div id="landing_form" class="hs-form"></div>
 		</div>
-	</div>
-	<div class="pad-2 rounded shadow f-one" style="width:100%;background:white;flex-direction:column;display:flex; justify-content: center;">
-		<div class="f-row jc-center">
-			<div id="landing_form" class="item"></div>
-			<div style="display:flex;flex-direction: column;">
-				<h3 class="item fg-teal-dk" style="padding-left:2em;font-weight:400;">{ martketingTxt2 || 'Be the first to know...' }</h3>
-				<h1 class="item fg-teal-dk" style="padding-top:.5em;padding-left:2em;">{ martketingTxt3 || 'GET UPDATES' }</h1>
+		<div class="cp-footer ta-center fg-white">
+			<div class="dev-links fg-black-lt">
+				<span class="default" style="font-style: italic">© { currentYear } Evosus Retail Pro All Rights Reserved</span>
 			</div>
-		</div>
-		<ui-btn-icon class="item" mdicon="mdi mdi-arrow-up" onclick="{ scrollUp }" />
-		<div class="copy-containter item">
-			<copyright />
 		</div>
 	</div>
 	<style>
-		input[type=text], input[type=email] {
-			width: 20em;
+		.right {
+			position: absolute;
+			right: 10px;
+			width: 40%;
+			max-width: 400px;
+			padding: 2em;
 		}
-		input[type=submit], .hs-button {
-			background-color: orange;
-			background: orange;
-			height: 2.5em;
-			margin: 0;
-			padding: 0em .5em;
-			border: none;
-			cursor: pointer;
-			font-weight: 700;
-			transition: .25s ease-in-out all;
-			width: 100%;
-		}
-		.content-box {
-			background: white;
-			opacity: 0.8;
-			color: #444;
-		}
-		input[type=submit], .hs-button button {
-			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25) !important;
-		}
-		h1 {
-			font-size: 2.15em;
-			margin-top: 2px;
-		}
-		.landing {
-			display: flex;
-			width: 100%;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-		}
-		.copy-container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-			flex-direction: row;
-
-		}
-		.space-between {
-			justify-content: space-between;
-			display: flex;
-		}
-		.item {
-			display: flex;
-			justify-content: center;
-			/*justify-content: space-between;*/
-			flex-direction: row;
-		}
-		.landing-text {
-			color: #444;
-			font-size: 150%;
-		}
-		.landing-item {
-			display: flex;
-			width: 100%;
-			justify-content: center;
-			flex-direction: row;
-		}
+		
 		.bg-landing {
 			background-image: url('../../../lib/evo-pro-assets/src/img/poolcorp-bg.jpg');
+			background-size: cover;
 		    background-repeat: no-repeat;
 		    background-attachment: fixed;
 		    background-position: center;
-		    background-size: 100% 100%;
-		    opacity: 0.9;
 		    z-index: -1;
+			max-width: 100%;
+			max-height: 100%;
+			display: block;
+			margin: auto;
 		}
-		.full-screen-background {
-			position: fixed; 
-			top: 0; 
-			left: 0; 
-			width: 100vw;
-			z-index: -1;
-			overflow: auto;
-			
+		.fade {
+			opacity: 0.8;
 		}
-		.backgroundfade {
-			opacity: 0.9
+		h1 {
+			font-size: 2.5em;
+			margin-top: 2px;
 		}
-		.titleText{
-			color: #CCC;
-			z-index: 5;
-			font-size: 24px;
+		a:link {color: #FFF; text-decoration: none; }
+		a:active {color: #FFF; text-decoration: none; }
+		a:visited {color: #FFF; text-decoration: none; }
+		a:hover {color: #FFF; text-decoration: none; }
+		.cp-footer {
+			position:fixed;
+			left:0px;
+			bottom:0px;
+			height:20px;
+			width:100%;
+			padding: 9px;
+			background:#42bff4;
 		}
-		.signup-button { width:16em; }
-		.ep-logo {
-			width: 8.5em;
-			height: 2em;
-		}
-		.ep-logo-item {
-			background-image: url('../../../lib/evo-pro-assets/src/img/evosus_logo-transparent.png');
-			background-size: contain;
-			background-repeat: no-repeat;
-			background-position: center center;
-			width: 100%;
-			height: 100%;
-		}
-		
+
+		@media (max-width: 420px) {
+			.hs-button.primary { 
+				font-size: .75em ;
+				line-height: 1;  
+			}
+			h1 {
+				font-size: 1.75em;
+				margin-top: 2px;
+			}	
+			.bg-landing {
+				background-position: -400px 0px;
+			}
+  		}
+		@media (max-width: 360px) {
+			.hs-button.primary { 
+				font-size: .75em;
+				line-height: 1;  
+			}
+			h1 {
+				font-size: 1em;
+			}
+			h3 {
+				font-size: .75em;
+			}	
+			.bg-landing {
+				background-position: -400px 0px;
+			}
+			.hs-button.primary {
+				margin: 5px 0;
+			}
+			.fix-spacing {
+				margin-top: 0;
+			}
+  		}  
 	</style>
 	<script>
 		var self = this;
 		this.on('mount', function() {
+			overflow = true;
 			RC.trigger('UI_SET_STATE', {
 				route: '/landing',
-				title: 'Evosus Retail Pro',
+				title: 'Evosus Retail Pro - Point Of Sale Software',
 				spinner: false,
 				hideMenuIcon: true,
 				showLoginIcon:true
@@ -150,17 +116,12 @@
 				}
 			}
 		});
-		scrollDown = function() {
-		    window.scrollTo(0, 1000);
-		}
-		scrollUp = function() {
-		    window.scrollTo(0,-1000);
-		}
 	</script>
 	<script>
+		currentYear = new Date().getFullYear();
 		this.on('mount', function() {
 			hbspt.forms.create({
-				// css: ''
+				css: '.hs-form { max-width: 400px; min-width:150px; font-family: Sans-Serif; } .hs-button.primary { display: inline-block; margin: 15px 0; width:100%; padding: 5px 15px 5px 15px; font-size: 1.25em;font-weight:600; line-height: 1.5; box-shadow: none; border: none; background-color: #F89522; color: #FFF;  } .hs-button.primary:hover { background-color: #F89522; } .hs-form label { font-size: 16px; color: #444; } .hs-form input[type="text"] { box-sizing: border-box; padding: 5px; width: 100%; margin: 5px 0; } .hs-form input[type="tel"] { box-sizing: border-box; margin: 0; padding: 5px; width: 100%; margin: 5px 0; }  .hs-form input[type="email"] { box-sizing: border-box; padding: 5px; width: 100%; margin: 5px 0;} .hs-error-msgs label { line-height: 20px; font-size: 16px; display: hidden; list-style-type: none; } ',
 				portalId: '1835951',
 			 	formId: '2993fb6b-88ad-4965-b81f-782e39c143a1',
 			 	target:'#landing_form'
