@@ -3,17 +3,18 @@
 // --------------------------------------
 // ROUTES
 // --------------------------------------
-// LANDING
+// HELP
 // --------------------------------------
-function mountLanding() {
+function mountHelp() {
+    console.log('route to help');
     riot.compile(function() {
-        riot.mount('#appMount', 'landing-app-subscreen-nav');
+        riot.mount('#appMount', 'help-nav');
         // riot.mount('#globalNavMount', 'app-subscreen-nav');
-        riot.mount('#landing_subscreenNavMount', 'landing-template');
+        riot.mount('#landing_subscreenNavMount', 'help-template');
     });
 }
-route('/landing', function() {
-    mountLanding();
+route('/help', function() {
+    mountHelp();
 });
 route('/', function() {
     mountLanding();

@@ -1,0 +1,45 @@
+<help-template>
+	<div class="ui-secondary f-row jc-between pad-1">
+        HELP WIZARD TEST!
+	</div>
+    <div class="ui-background">
+        <div class="f-row pad-1">
+            <div class="f-row ac-center shadow pad-dot-5" each="{ v,idx in helpSteps }">
+               { v.questions.questions.stepName }
+            </div>
+           
+            <!--onkeyup="{ syncInput }"-->
+        </div>
+    </div>
+   
+       
+    <script>
+        var self=this;
+        console.log('in template help');
+        // var activeStep = 0;
+        // var helpSteps = { 
+        //     "questions": {
+        //     "stepName": "Company step 1",
+        //     "stepQuestion": [
+        //         { nameCompany:"Company 2"},
+        //         { nameContact:"Contact 3"}
+        //     ]},
+        //     "questions": {
+        //     "stepName": "Company step 2",
+        //     "stepQuestion": [
+        //         { nameCompany:"Company 4"},
+        //         { nameContact:"Contact 5"}
+        //     ]}
+        // };
+    //    console.log('helpsteps', helpSteps);
+
+        
+        this.on('mount', function() {
+            console.log('mount help');
+            //nothing for now
+            self.update();
+        });
+           
+    </script>
+
+</help-template>
