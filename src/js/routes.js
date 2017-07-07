@@ -5,17 +5,10 @@
 // --------------------------------------
 // HELP
 // --------------------------------------
-function mountHelp() {
-    console.log('route to help');
-    riot.compile(function() {
-        riot.mount('#appMount', 'help-nav');
-        // riot.mount('#globalNavMount', 'app-subscreen-nav');
-        riot.mount('#landing_subscreenNavMount', 'help-template');
-    });
-}
-route('/help', function() {
-    mountHelp();
+
+riot.compile(function() {
+    riot.mount('#appMount', 'help-nav');
+    riot.mount('#globalNavMount', 'help-template');
+    //riot.mount('#landing_subscreenNavMount', 'help-template');
 });
-route('/', function() {
-    mountLanding();
-});
+
